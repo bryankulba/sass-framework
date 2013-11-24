@@ -1,0 +1,98 @@
+/******************
+
+ Grid stuff
+
+- Default grid used is Susy (http://susy.oddbird.net/)
+
+ ******************/
+
+$total-columns: 6;
+$column-width: 6.5em;
+$gutter-width: 1em;
+$grid-padding: 0;
+
+
+$container-style: static;
+
+
+$break: 6; //This is the number of Columns
+
+/*
+
+Here's the grid stuff to be applied
+
+*/
+
+.wrap{
+	padding: 0 $mobile-padding;
+	@include at-breakpoint($break) {
+		padding: 0;
+		@include container($total-columns, $break);
+
+		// @include susy-grid-background; //This will show a grid if you unquote it
+	}
+}
+
+
+// You shouldn't have to edit anything below here
+
+@include at-breakpoint($break) {
+	.one{
+		@include span-columns(1,$break);
+	}
+	.two{
+		@include span-columns(2,$break);
+	}
+	.three{
+		@include span-columns(3,$break);
+	}
+	.four{
+		@include span-columns(4,$break);
+	}
+	.five{
+		@include span-columns(5,$break);
+	}
+	.six{
+		@include span-columns(6,$break);
+	}
+	.seven{
+		@include span-columns(7,$break);
+	}
+	.eight{
+		@include span-columns(8,$break);
+	}
+	.nine{
+		@include span-columns(9,$break);
+	}
+	.ten{
+		@include span-columns(10,$break);
+	}
+	.eleven{
+		@include span-columns(11,$break);
+	}
+	.twelve{
+		@include span-columns(12,$break);
+	}
+	.pushOne{
+		@include push(1);
+	}
+	.pushTwo{
+		@include push(2);
+	}
+	.pushThree{
+		@include push(3);
+	}
+	.pushFour{
+		@include push(4);
+	}
+	.pushFive{
+		@include push(4);
+	}
+	.pushSix{
+		@include push(4);
+	}
+	.omega{
+		 @include omega;
+	}
+
+}

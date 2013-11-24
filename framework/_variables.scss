@@ -1,0 +1,86 @@
+/******************
+
+Site-wide Variables
+
+******************/
+
+
+/*
+
+COLORS
+
+ */
+
+
+// Website Colors
+$color-foreground: #57585a;
+$color-foreground-lt: lighten(#57585a, 20);
+$color-foreground-dk: darken(#57585a, 20);
+$color-background: #f2f2f2;
+
+$color-grey: #57585a;
+$color-grey-lt: #6a6b6d;
+$color-grey-dk: #4d4e4f;
+
+$color-blue: #a0cddb;
+
+$color-highlight-foregound: $color-background;
+$color-highlight-backgound: $color-foreground;
+
+$link-color:        $color-foreground;
+$link-hover:        darken($link-color, 9%);
+
+
+// Alert Colors
+
+$alert-yellow:      #ebe16f;
+$alert-red:         #fbe3e4;
+$alert-green:       #e6efc2;
+$alert-blue:        #d5edf8;
+
+
+/*
+
+Typography
+
+*/
+
+$font-size: 21px;
+$line-height: 1.4em;
+$font-default: "pragmatica-web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-default-second:  "futura-pt-condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+// $sans-serif:        "Helvetica Neue", Helvetica, Arial, sans-serif;
+// $serif:             "Georgia", Cambria, Times New Roman, Times, serif;
+
+
+/* 	To embed your own fonts, use this syntax
+	and place your fonts inside the
+	library/fonts folder. For more information
+	on embedding fonts, go to:
+	http://www.fontsquirrel.com/
+	Be sure to remove the comment brackets.
+*/
+
+/*	@font-face {
+    	font-family: 'Font Name';
+    	src: url('library/fonts/font-name.eot');
+    	src: url('library/fonts/font-name.eot?#iefix') format('embedded-opentype'),
+             url('library/fonts/font-name.woff') format('woff'),
+             url('library/fonts/font-name.ttf') format('truetype'),
+             url('library/fonts/font-name.svg#font-name') format('svg');
+    	font-weight: normal;
+    	font-style: normal;
+	}
+*/
+
+
+
+
+/*
+
+Inital Setup Variables
+
+ */
+
+$mobile-padding: 2em; //the initial padding for the website in mobile

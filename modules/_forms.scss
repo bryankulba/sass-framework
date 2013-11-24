@@ -1,0 +1,26 @@
+/******************
+
+Forms
+
+******************/
+
+
+
+// Placeholder Styling
+
+::-webkit-input-placeholder { /* WebKit browsers */
+	font-family: $font-default;
+	text-transform: uppercase;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	font-family: $font-default;
+	text-transform: uppercase;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+	font-family: $font-default;
+	text-transform: uppercase;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+	font-family: $font-default;
+	text-transform: uppercase;
+}

@@ -1,0 +1,27 @@
+/******************
+
+Partials
+
+-This is an intermediary file that imports the partial files and wraps them in their proper tag.
+
+******************/
+
+// styles in _header.scss
+header{
+	@import "header";
+}
+
+// styles in nav.scss
+nav{
+	@import "nav";
+}
+
+// styles in _content.scss
+#content{
+	@import "content";
+}
+
+// styles in _footer.scss
+footer{
+	@import "footer";
+}

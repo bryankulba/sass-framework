@@ -1,0 +1,36 @@
+/******************
+
+Content
+
+******************/
+
+h1{
+	display: inline-block;
+	margin: 0;
+	border-top: 4px solid $color-foreground;
+	border-bottom: 4px solid $color-foreground;
+	color: $color-foreground;
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: 200;
+	font-size: 3em;
+	font-family: $font-default-second;
+	line-height: 1.333em;
+}
+
+h2{
+	margin-top: 0;
+	margin-bottom: 0em;
+	font-weight: 200;
+	font-size: 1.75em;
+	line-height: 1.4em;
+}
+
+h3{
+	font-size: 1.125em;
+}
+
+
+ul, p{
+	margin-top: 0;
+}
