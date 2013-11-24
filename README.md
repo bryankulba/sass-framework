@@ -14,3 +14,4 @@ It's a combination of a bunch of approaches and code I've found around the web. 
 
 1. Integrate consistent Best Practises like: http://css-tricks.com/sass-style-guide/
 2. Scalable and Modular Architecture for CSS (SMACSS) http://smacss.com/
+3. Read this: https://github.com/howaboutwe/sass-style-guide
