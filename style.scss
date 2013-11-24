@@ -55,7 +55,8 @@ the other stylesheets. Remember, keep it light: Speed is Important.
 // styles in partials folder (assembles files with folder)
 @import "partials/partials";
 
-
+// Styles and classes that are commonly used in web design
+@import "modules/utility";
 
 // override any of the vendor styles
 @import "vendors/overrides";

@@ -30,6 +30,16 @@ $color-highlight-backgound: $color-foreground;
 $link-color:        $color-foreground;
 $link-hover:        darken($link-color, 9%);
 
+//Borders
+$color-border: $color-foreground; // Setting up the default border colour used in buttons, forms, etc. (as defined /modules/_forms.scss)
+
+
+//Buttons 
+$color-btn: $color-background; // Setting up the default color for the colour of buttons (as defined in /modules/_btn.scss)
+$color-btn-text: $color-foreground;
+$color-btn-border: $color-border; //by default, this is the same as the general border definition
+
+
 
 // Alert Colors
 
