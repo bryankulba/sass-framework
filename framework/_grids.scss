@@ -25,7 +25,7 @@ Here's the grid stuff to be applied
 
 .wrap{
 	padding: 0 $mobile-padding;
-	@include at-breakpoint($break) {
+@include breakpoint($bkpt-1024){
 		padding: 0;
 		@include container($total-columns, $break);
 
@@ -36,7 +36,7 @@ Here's the grid stuff to be applied
 
 // You shouldn't have to edit anything below here
 
-@include at-breakpoint($break) {
+@include breakpoint($bkpt-1024){
 	.one{
 		@include span-columns(1,$break);
 	}

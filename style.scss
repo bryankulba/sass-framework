@@ -28,14 +28,14 @@ of the styles inside media queries.
 // import mixins
 @import "framework/mixins";
 
-// define grid and dimensions
-@import "framework/grids";
-
-
 // define Breakpoints
 $breakpoint-no-queries: false;
 $breakpoint-no-query-wrappers: false;
 @import "framework/breakpoint";
+
+
+// define grid and dimensions
+@import "framework/grids";
 
 
 /*

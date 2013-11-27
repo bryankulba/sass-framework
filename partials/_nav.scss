@@ -4,12 +4,15 @@ Navigation
 
 ******************/
 
-ul{
-	li{
-		a, a:visited{
-			&:hover{
-				
+
+nav{
+	ul{
+		li{
+			a, a:visited{
+				&:hover{
+					
+				}
 			}
 		}
 	}
-}
+} // end nav

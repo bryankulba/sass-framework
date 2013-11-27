@@ -23,14 +23,14 @@ Stylesheet: IE8 fallback Stylesheet
 // import mixins
 @import "framework/mixins";
 
-// define grid and dimensions
-@import "framework/grids";
-
 
 // define Breakpoints
 $breakpoint-no-queries: false;
 $breakpoint-no-query-fallbacks: true;
 @import "framework/breakpoint";
+
+// define grid and dimensions
+@import "framework/grids";
 
 
 /*

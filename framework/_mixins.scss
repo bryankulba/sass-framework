@@ -4,3 +4,19 @@ Mixins
 
 
  ******************/
+
+
+//This needs to be tweaked, so if no 2x image exists, it won't break.
+@mixin replace-text-with-dimensions-for-retina($image-standard, $image-retina) {
+    @include replace-text-with-dimensions($image-standard);
+    @media
+        only screen and (-webkit-min-device-pixel-ratio: 2),
+        only screen and (   -moz-min-device-pixel-ratio: 2),
+        only screen and (     -o-min-device-pixel-ratio: 2),
+        only screen and (        min-device-pixel-ratio: 2),
+        only screen and (           min-resolution: 192dpi),
+        only screen and (           min-resolution: 2dppx) {
+            background-image: image-url($image-retina);
+            background-size: 100% 100%;
+        }
+}

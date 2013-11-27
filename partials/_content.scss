@@ -4,11 +4,12 @@ Content
 
 ******************/
 
-#{headings()} { // This is gonna define some stuff for ALL headings.
-    font-weight: 700; 
-}
 
-
-ul, p{
-	margin-top: 0;
-}
+#content{ 
+	#{headings()} { // This is gonna define some stuff for ALL headings.
+	    font-weight: 700; 
+	}
+	ul, p{
+		margin-top: 0;
+	}
+} // end content

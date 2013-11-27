@@ -7,21 +7,13 @@ Partials
 ******************/
 
 // styles in _header.scss
-header{
-	@import "header";
-}
+@import "header";
 
 // styles in nav.scss
-nav{
-	@import "nav";
-}
+@import "nav";
 
 // styles in _content.scss
-#content{
-	@import "content";
-}
+@import "content";
 
 // styles in _footer.scss
-footer{
-	@import "footer";
-}
+@import "footer";
