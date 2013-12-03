@@ -58,6 +58,11 @@ the other stylesheets. Remember, keep it light: Speed is Important.
 // Styles and classes that are commonly used in web design
 @import "modules/utility";
 
+// add Modules here
+@import "modules/buttons";
+@import "modules/forms";
+@import "modules/wordpress";
+
 // override any of the vendor styles
 @import "vendors/overrides";
 

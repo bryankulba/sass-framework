@@ -39,6 +39,12 @@ $color-btn: $color-background; // Setting up the default color for the colour of
 $color-btn-text: $color-foreground;
 $color-btn-border: $color-border; //by default, this is the same as the general border definition
 
+// Forms
+$form-color: $color-foreground;
+$form-color-background: $color-background;
+$form-color-border: lighten($color-foreground, 50);
+$form-color-btn: $color-btn;
+$form-color-btn-text: $color-background;
 
 
 // Alert Colors
@@ -84,13 +90,11 @@ $font-default-second:  "futura-pt-condensed", "Helvetica Neue", Helvetica, Arial
 	}
 */
 
-
-
-
 /*
-
 Inital Setup Variables
 
  */
 
-$mobile-padding: 2em; //the initial padding for the website in mobile
+$mobile-padding: 3em; //the initial padding for the website in mobile
+
+

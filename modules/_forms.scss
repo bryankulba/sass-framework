@@ -79,15 +79,15 @@ form{
 			margin-left:21%;
 		}
 	}
-	input[type="text"], textarea{
+	input[type="text"], input[type="email"], textarea{
 		font-family: $font-default;
-		background: $color-background;
-		color: $color-foreground;
+		background: $form-color-background;
+		color: $form-color;
 		display: block;
 		float:left;
 		// width: 80%;  // Unquote if you want to show the label next to the input
 		width:100%;
-		border:1px solid $color-border;
+		border:1px solid $form-color-border;
 		-webkit-appearance: none;
 	    border-radius: 0.125em;
 		height:2.5em;
@@ -99,7 +99,7 @@ form{
 		box-sizing: border-box;
 		&:focus{
 			outline:none;
-			background:$color-background;
+			background:$form-color-background;
 		}
 	}
 	textarea{
@@ -110,8 +110,8 @@ form{
 		float:right;
 		width:50%;
 		border:none;
-		background-color:$color-btn;
-		color:$color-foreground;
+		background-color:$form-color-btn;
+		color:$form-color-btn-text;
 		text-transform: uppercase;
 		font-size:1.250em;
 		font-family: $font-default;
