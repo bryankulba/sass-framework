@@ -6,29 +6,24 @@
 
  ******************/
 
-$total-columns: 6;
-$column-width: 6.5em;
+
+$break: 8; // number of columns
+$column-width: 4em;
 $gutter-width: 1em;
-$grid-padding: 0;
-
-
 $container-style: static;
 
-
-$break: 6; //This is the number of Columns
-
-/*
-
-Here's the grid stuff to be applied
-
-*/
-
-.wrap{
+.wrap, #content section{
 	padding: 0 $mobile-padding;
-@include breakpoint($bkpt-1024){
-		padding: 0;
-		@include container($total-columns, $break);
-
+	@include breakpoint($bkpt-768){
+		@include with-grid-settings($break,$column-width,$gutter-width,$mobile-padding) {
+		  @include container; 
+		}
+		// @include susy-grid-background; //This will show a grid if you unquote it
+	}
+	@include breakpoint($bkpt-1024){
+		// @include with-grid-settings($break,$column-width,$gutter-width,$mobile-padding) {
+		//   @include container; 
+		// }
 		// @include susy-grid-background; //This will show a grid if you unquote it
 	}
 }
