@@ -507,11 +507,12 @@ the normalize styles, make sure to edit from this point up.
 ******************************************************************/
 
 // proper formatting (http://blog.fontdeck.com/post/9037028497/hyphens) 
+// pulled this, because I don't think hyphenation is ready for browsers - BK
 p {
-	-webkit-hyphens: auto;
-	-epub-hyphens:   auto;
-	-moz-hyphens:    auto;
-  hyphens:         auto;
+	// -webkit-hyphens: auto;
+	// -epub-hyphens:   auto;
+	// -moz-hyphens:    auto;
+ //  hyphens:         auto;
 }
 
 b, strong, .strong { font-weight: bold; }
