@@ -10,11 +10,11 @@
 $break: 8; // number of columns
 $column-width: 4em;
 $gutter-width: 1em;
-$container-style: static;
+$container-style: magic;
 
 .wrap, #content section{
 	padding: 0 $mobile-padding;
-	@include breakpoint($bkpt-768){
+	@include breakpoint($bkpt-1024){
 		@include with-grid-settings($break,$column-width,$gutter-width,$mobile-padding) {
 		  @include container; 
 		}
@@ -54,7 +54,7 @@ $container-style: static;
 		@include span-columns(7,$break);
 	}
 	.eight{
-		@include span-columns(8,$break);
+		@include span-columns(8 omega,$break);
 	}
 	.nine{
 		@include span-columns(9,$break);
