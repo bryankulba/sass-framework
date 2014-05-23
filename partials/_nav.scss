@@ -4,15 +4,118 @@ Navigation
 
 ******************/
 
-
-nav{
-	ul{
-		li{
-			a, a:visited{
-				&:hover{
-					
+header{
+	nav{
+		ul{
+			z-index: 90;
+			position: absolute;
+			top: 3em;
+			// bottom: 0;
+			left: 0em;
+			right: 0em;
+			@include breakpoint($bkpt-768){
+				// top: 0;
+			}
+			width: 100%;
+			margin: 0;
+			padding: 0;
+			display: block;
+			background-color: $nav-link-mobile-bgnd;
+			height:0;
+			max-height: 1px;
+			overflow: hidden;
+			-webkit-transition: max-height 1s;
+			-moz-transition: max-height 1s;
+			-ms-transition: max-height 1s;
+			-o-transition: max-height 1s;
+			transition: max-height 1s;
+			li{
+				list-style: none;
+				display: block;
+				text-align: center;
+				a, a:visited{
+					color: $nav-link-mobile;
+					text-transform: uppercase;
+					font-family: $font-default;
+					letter-spacing: 1px;
+					display: block;
+					padding: 0.5em 0;
+					background-color:  $nav-link-mobile-bgnd;
+					&:hover, &.active{
+						
+					}
+				}
+				
+				&.current-menu-item{
+					a, a:visited{
+						background:  $nav-link-mobile-active-bgnd;
+						color: $nav-link-mobile;
+						@include breakpoint($bkpt-1024){
+							color: $nav-link-active;
+						}
+					}
+				}
+			}
+			&.activated{
+				height: auto;
+				-webkit-transition: max-height 1s;
+				-moz-transition: max-height 1s;
+				-ms-transition: max-height 1s;
+				-o-transition: max-height 1s;
+				transition: max-height 1s;
+				max-height: 800px;
+				// min-height: 800px;
+			}
+		}
+		@include breakpoint($bkpt-1024){
+			display: block;
+			ul{			
+				background: transparent;
+				position: relative;
+				top: auto;
+				left: auto;
+				margin: 0;
+				padding: 0;
+				height: auto;
+				max-height: none;
+				width: auto;
+				li{
+					display: inline-block;
+					a, a:visited{
+						padding: 0;
+						background: transparent;
+						color: $nav-link;
+						text-transform: uppercase;
+						&:hover{
+							color: $nav-link-hover;
+						}
+					}
+					&.current-menu-item a{
+						background: transparent;
+						// color: $color-blue;
+					}
 				}
 			}
 		}
+	} // end nav
+	.navHamburger{
+		font-size: 2em;
+		line-height: 1.5em;
+		position: absolute;
+		z-index:100;
+		left: auto;
+		right: 1em;
+		top: 0;
+		display: block;
+		cursor: pointer;
+		box-sizing: padding-box;
+		background-clip: border-box;
+		color: $nav-hamburger;
+		&:hover{
+			color: $nav-hamburger;
+		}
+		@include breakpoint($bkpt-1024){
+			display: none;
+		}
 	}
-} // end nav
+}
