@@ -39,6 +39,23 @@ Mixins
   }
 }
 
+@mixin stickybackground($background-file){
+  background-image: url(../images/backgrounds/#{$background-file}.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: top center;
+  background-repeat: no-repeat;
+}
+
+// vertically centers element in its parent (needs position and height declaration)
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
 
 %clearfix {
   *zoom: 1;
