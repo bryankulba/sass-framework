@@ -39,6 +39,16 @@ $form-color-border: lighten($color-foreground, 50);
 $form-color-btn: $color-btn;
 $form-color-btn-text: $color-background;
 
+// Nav Base Colors
+$nav-link: $color-foreground;
+$nav-link-hover: $color-foreground;
+$nav-link-active: $color-foreground;
+$nav-link-mobile: $color-background;
+$nav-link-mobile-bgnd: $color-foreground;
+$nav-link-mobile-active-bgnd: $color-foreground;
+$nav-hamburger: $color-foreground;
+$nav-hamburger-hover: $color-foreground;
+
 
 // Alert Colors
 
