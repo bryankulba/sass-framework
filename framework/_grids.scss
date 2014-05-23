@@ -12,7 +12,7 @@ $column-width: 4em;
 $gutter-width: 1em;
 $container-style: magic;
 
-.wrap, #content section{
+.wrap, #content{
 	padding: 0 $mobile-padding;
 	@include breakpoint($bkpt-1024){
 		@include with-grid-settings($break,$column-width,$gutter-width,$mobile-padding) {
