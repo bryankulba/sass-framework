@@ -6,23 +6,44 @@
 
  ******************/
 
+$susy: (
+  flow: ltr,
+  math: fluid,
+  output: float,
+  gutter-position: after,
+  container: auto,
+  container-position: center,
+  columns: 4,
+  gutters: .25,
+  column-width: false,
+  global-box-sizing: content-box,
+  last-flow: to,
+  debug: (
+    image: hide,
+    color: rgba(#66f, .25),
+    output: background,
+    toggle: top right,
+  ),
+  use-custom: (
+    background-image: true,
+    background-options: false,
+    box-sizing: true,
+    clearfix: false,
+    rem: true,
+  )
+);
 
-$break: 8; // number of columns
-$column-width: 4em;
-$gutter-width: 1em;
-$container-style: magic;
+
+@include border-box-sizing;
+
+@include layout($susy);
 
 .wrap, #content{
 	padding: 0 $mobile-padding;
-	@include breakpoint($bkpt-1024){
-		@include with-grid-settings($break,$column-width,$gutter-width,$mobile-padding) {
-		  @include container; 
-		}
-		// @include susy-grid-background; //This will show a grid if you unquote it
-	}
+
 	@include breakpoint($bkpt-1024){
 		// @include with-grid-settings($break,$column-width,$gutter-width,$mobile-padding) {
-		//   @include container; 
+		  @include container($susy); 
 		// }
 		// @include susy-grid-background; //This will show a grid if you unquote it
 	}
@@ -33,40 +54,25 @@ $container-style: magic;
 
 @include breakpoint($bkpt-1024){
 	.one{
-		@include span-columns(1,$break);
+
+		@include span(1);
 	}
 	.two{
-		@include span-columns(2,$break);
+
+		@include span(2);
 	}
 	.three{
-		@include span-columns(3,$break);
+		@include span(3);
 	}
 	.four{
-		@include span-columns(4,$break);
+		@include span(4);
 	}
 	.five{
-		@include span-columns(5,$break);
+		@include span(5);
 	}
 	.six{
-		@include span-columns(6,$break);
-	}
-	.seven{
-		@include span-columns(7,$break);
-	}
-	.eight{
-		@include span-columns(8 omega,$break);
-	}
-	.nine{
-		@include span-columns(9,$break);
-	}
-	.ten{
-		@include span-columns(10,$break);
-	}
-	.eleven{
-		@include span-columns(11,$break);
-	}
-	.twelve{
-		@include span-columns(12,$break);
+		@include span(6);
+		@include last; 
 	}
 	.pushOne{
 		@include push(1);
