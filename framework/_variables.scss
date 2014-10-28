@@ -50,6 +50,15 @@ $nav-hamburger: $color-foreground;
 $nav-hamburger-hover: $color-foreground;
 
 
+// Pagination
+
+$pagination-font: $color-foreground;
+$pagination-font-hover: $color-background;
+$pagination-border: $color-foreground;
+$pagination-border-hover: $color-foreground;
+$pagination-current-font: $color-foreground;
+$pagination-current-border: $color-foreground;
+
 // Alert Colors
 
 $alert-yellow:      #ebe16f;
