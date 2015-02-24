@@ -1,22 +1,28 @@
 /******************
 
-Forms
+Buttons
 
 *Variables in this file are defined in framework/_variables*
 
 ******************/
 
-.btn{
+.btn, a.btn, a.btn.btnGreen{
 	display: inline-block;
 	padding: 0.5em 1em;
-	border: 1px solid $color-btn-border;
-	border-radius: 0.25em;
+	border: 0px;
+	border-radius: 5px;
 	background: $color-btn;
 	color: $color-btn-text;
 	text-transform: uppercase;
 	font-size:0.8em;
+	line-height: $line-height;
+	letter-spacing: 1px;
+	font-weight: 600;
+	transition: background-color 0.5s;
 	&:hover{
-		background: $color-btn-text;
-		color: $color-btn;
+		background-color: $color-btn;
+	}
+	&:visited{
+		color: $color-btn-text;
 	}
 }

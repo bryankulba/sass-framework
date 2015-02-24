@@ -5,293 +5,198 @@ Forms
 ******************/
 
 
-
-// Placeholder Styling
-
-::-webkit-input-placeholder { /* WebKit browsers */
-	font-family: $font-default;
-	text-transform: uppercase;
-}
-:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-	font-family: $font-default;
-	text-transform: uppercase;
-}
-::-moz-placeholder { /* Mozilla Firefox 19+ */
-	font-family: $font-default;
-	text-transform: uppercase;
-}
-:-ms-input-placeholder { /* Internet Explorer 10+ */
-	font-family: $font-default;
-	text-transform: uppercase;
-}
-
-form{
-	fieldset{
-		border:none;
-		padding:0;
-	}
-	label{
-		// display:inline-block;
-		// width:20%;
-		// padding:0.25em 0.35em 0.25em 0;
-		// background-color:darken($color-foreground, 5);
-		// height:2.5em;
-		// margin:0;
-		// float:left;
-		// line-height:2em;
-		// color:$color-foreground;
-		// font-weight:600;
-		// letter-spacing:0.09em;
-		// text-align:right;
-		// -webkit-box-sizing: border-box;
-		// -moz-box-sizing: border-box;
-		// -o-box-sizing: border-box;
-		// -ms-box-sizing: border-box;
-		// box-sizing: border-box;
-		display: none;
-	}
-	.field-body label{
-		display:none;
-	}
-	.bbf-field, .bbf-editor{
-		margin-bottom:0.25em;
-//			overflow:hidden;
-		&:after{
-			content:"";
-			clear:both;
-			display:block;
-		}
-	}
-	.bbf-field{
-		height:3.6em;
-		margin-bottom:0.6em;
-	}
-	.bbf-error{
-		display: none;
-		input{
-			-moz-box-shadow:    inset 0 0 10px rgba(red, 0.5);
-			-webkit-box-shadow: inset 0 0 10px rgba(red, 0.5);
-			box-shadow:         inset 0 0 10px rgba(red, 0.5);
-		}
-		.bbf-error{
-			color:red;
-			font-size:0.8em;
-			margin-left:21%;
-		}
-	}
-	input[type="text"], input[type="email"], textarea{
-		font-family: $font-default;
-		background: $form-color-background;
-		color: $form-color;
-		display: block;
-		float:left;
-		// width: 80%;  // Unquote if you want to show the label next to the input
-		width:100%;
-		border:1px solid $form-color-border;
-		-webkit-appearance: none;
-	    border-radius: 0.125em;
-		height:2.5em;
-		padding:0.25em 0.1em 0.25em 0.5em;
-		-webkit-box-sizing: border-box;
-		-moz-box-sizing: border-box;
-		-o-box-sizing: border-box;
-		-ms-box-sizing: border-box;
-		box-sizing: border-box;
-		&:focus{
-			outline:none;
-			background:$form-color-background;
-		}
-	}
-	textarea{
-		height:8em;
-		width:100%;
-	}
-	input[type="submit"]{
-		float:right;
-		width:50%;
-		border:none;
-		background-color:$form-color-btn;
-		color:$form-color-btn-text;
-		text-transform: uppercase;
-		font-size:1.250em;
-		font-family: $font-default;
-	}
-}
-
-/// figure this out
-
-/******************
-
-Forms
-
-******************/
-
-//form variables
-$label-width: 100%;
 @mixin label-style{
-	@include breakpoint($bkpt-768){
-		width: $label-width;
-		float: left;
-		text-align: right;
-		height:2.5em;
+	@if $label-width == 100% {
+		display: block;
+	} @else {
+		@include breakpoint($bkpt-768){
+			width: $label-width;
+			float: left;
+			text-align: right;
+			height:2.5em;
+			padding:0.25em 0.35em 0.25em 0;
+			line-height:2em;
+			margin:0;
+		}
 	}
+
 }
-@mixin bbf-editor-style{ // the input field
-	@include breakpoint($bkpt-768){
-		width: 100% - $label-width;
-		float: left;
+@mixin form-field-editor-style{ // the input field
+	@if $label-width == 100% {
+		display: block;
+	} @else {
+		@include breakpoint($bkpt-768){
+			width: 100% - $label-width;
+			float: left;
+		}
 	}
 }
 
 // Placeholder Styling
 
 ::-webkit-input-placeholder { /* WebKit browsers */
-	font-family: $font-default;
-	// text-transform: uppercase;
+	font-family: $form-font-second;
+	font-weight: 100;
+	font-style: italic;
+	color: $form-placeholder-color;
 }
 :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-	font-family: $font-default;
-	// text-transform: uppercase;
+	font-family: $form-font-second;
+	font-weight: 100;
+	font-style: italic;
+	color: $form-placeholder-color;
 }
 ::-moz-placeholder { /* Mozilla Firefox 19+ */
-	font-family: $font-default;
-	// text-transform: uppercase;
+	font-family: $form-font-second;
+	font-weight: 100;
+	font-style: italic;
+	color: $form-placeholder-color;
 }
 :-ms-input-placeholder { /* Internet Explorer 10+ */
-	font-family: $font-default;
-	// text-transform: uppercase;
+	font-family: $form-font-second;
+	font-weight: 100;
+	font-style: italic;
+	color: $form-placeholder-color;
 }
-
-.gform_wrapper form{
+form{
+	div{ // this will style all input containers
+		margin-bottom: 1em;
+		overflow: hidden;
+		clear: both;
+	}
 	fieldset{
 		border:none;
-		padding:0 0 3em 0;
+		// padding:0 0 2em 0;
+		padding: 0;
 	}
 	legend{
 		font-size: 2em;
 		line-height: 1.3em;
 		margin-bottom: 1em;
-		border-bottom: 1px dashed $color-foreground;
+		border-bottom: 1px dashed $form-color-background;
 		display: block;
 		padding-bottom: 0.25em;
 		width: 100%;
 	}
 	label{
-		padding:0.25em 0.35em 0.25em 0;
-		margin:0;
-		line-height:2em;
-		color:$color-foreground;
-		font-weight:600;
-		letter-spacing:0.09em;
+		color:$form-label-color;
+		font-weight:400;
 		text-align:left;
-		-webkit-box-sizing: border-box;
-		-moz-box-sizing: border-box;
-		-o-box-sizing: border-box;
-		-ms-box-sizing: border-box;
 		box-sizing: border-box;
-		// display: none;
+		margin-bottom: 0.25em;
 	}
-	.field-body label{
-		display:none;
-	}
-	.bbf-field, .bbf-editor{
-		margin-bottom: 1em;
-		overflow:hidden;
-		&:after{
-			content:"";
-			clear:both;
-			display:block;
-		}
-	}
-
-	input[type="text"], input[type="number"], input[type="email"], textarea{
-		font-family: $font-default;
+	input[type="text"], input[type="number"], input[type="email"], input[type="password"], textarea{
+		font-family: $form-font;
 		background: $form-color-background;
 		color: $form-color;
-		display: block;
-		float:left;
-		// width: 80%;  // Unquote if you want to show the label next to the input
-		width:100%;
+		width:$label-width;
 		border:1px solid $form-color-border;
 		-webkit-appearance: none;
 	    border-radius: 0.25em;
-		height:2.5em;
+		height:2.5rem;
 		padding:0.25em 0.1em 0.25em 0.5em;
-		-webkit-box-sizing: border-box;
-		-moz-box-sizing: border-box;
-		-o-box-sizing: border-box;
-		-ms-box-sizing: border-box;
 		box-sizing: border-box;
 		&:focus{
 			outline:none;
-			background:$form-color-background;
+			background:darken($form-color-background, 5);
 		}
+	}
+	input[type="submit"]{
+		@extend .btn;
+		@if $label-width == 100% {
+			display: inline-block;
+		} @else {
+			width:100% - $label-width;
+			height: 2.5em;
+			margin-right: 1em;
+			padding: 0.5em 2em;
+		}
+		border:none;
+		text-transform: uppercase;
+		transition: background-color 0.5s;
+	}
+	.form-cancel{
+		font-size: 0.8em;
+		color: $form-error-color;
+
+	}
+
+	// fancy schmancy
+	.half-field{
+		@include breakpoint($bkpt-768){
+			width: 50%;
+			float: left;
+			clear: none;
+			padding: 0 1em 0 0;
+			label{
+				width: $label-width*2;
+			}
+			input, textarea, select{ // the input field
+				width: 100% - ($label-width*2);
+				float: left;
+			}
+			.form-note{
+				clear: both;
+			}
+			& + .half-field{
+				padding: 0;
+			}
+		}
+	}
+
+	.form-field{
+		clear: both;
+	}
+	.form-field-required{
+		label{
+			&:after{
+				content:"required";
+				color: $form-error-color;
+				display: inline-block;
+				font-size: 0.666em;
+				font-weight: 400;
+				margin-right: 0.125em;
+				float: right;
+			}
+		}
+	}
+	.form-note{
+		font-size: 0.8em;
+		font-style: italic;
+		margin: 0;
+		color: lighten($color-foreground, 20);
+		&.forgotten-password{
+			text-align: right;
+		}
+	}
+	.form-error{
+		display: none;
+		color:$form-error-color;
+		@extend .form-note;
+	}
+
+	.form-field-error{
+		input{
+			box-shadow: inset 0 0 10px rgba($form-error-color, 0.5);
+		}
+		.form-error{
+			display: block;
+		}
+	}
+	input, textarea, select{ //this should style ALL form elements
+		margin-bottom: 0.5em;
 	}
 	textarea{
 		height:8em;
 		width:100%;
 	}
-	input[type="submit"]{
-		// float:right;
-		width:100% - $label-width;
-		border:none;
-		margin-left: $label-width;
-		background-color:$form-color-btn;
-		color:$form-color-btn-text;
-		text-transform: uppercase;
-		font-size:2em;
-		font-family: $font-default;
-		padding: 0.5em 0;
-		border-radius: 0.25em;
-		transition: background-color 0.5s;
-		&:hover{
-			background-color: darken($form-color-btn, 20);
-		}
-	}
 
-
-
-	// fancy schmancy
-	.half-field{
-		width: 50%;
-		float: left;
-		clear: none;
-		label{
-			width: $label-width*2;
-		}
-		.bbf-editor{ // the input field
-			width: 100% - ($label-width*2);
-			float: left;
-		}
-	}
-
-
-
-
-	.bbf-field{
-		clear: both;
-	}
-	.bbf-error{
-		display: none;
-		input{
-			-moz-box-shadow:    inset 0 0 10px rgba(red, 0.5);
-			-webkit-box-shadow: inset 0 0 10px rgba(red, 0.5);
-			box-shadow:         inset 0 0 10px rgba(red, 0.5);
-		}
-		.bbf-error{
-			color:red;
-			font-size:0.8em;
-			margin-left:21%;
-		}
-	}
-
-
-	.bbf-field-text, .bbf-field-number{
+	.form-field-text, .form-field-number{
 		label{
 			@include label-style;
 		}
-		.bbf-editor{ // the input field
-			@include bbf-editor-style;
+		input[type="text"], input[type="email"], textarea{ // the input field
+			@include form-field-editor-style;
 		}
 		input[type="text"], input[type="email"], textarea{
 
@@ -304,12 +209,12 @@ $label-width: 100%;
 			@extend .half-field;
 		}
 	}
-	.bbf-field-radio, .bbf-field-checkboxes, .bbf-field-checkbox{
+	.form-field-radio, .form-field-checkboxes, .form-field-checkbox{
 		@include breakpoint($bkpt-768){
 			margin-left: $label-width;
 		}
 	}
-	.bbf-field-checkbox{
+	.form-field-checkbox{
 		position: relative;
 		overflow: visible;
 		label{
@@ -319,165 +224,169 @@ $label-width: 100%;
 			line-height: 1.1em;
 			font-weight: 400;
 		}	
-		.bbf-editor{
+		input[type="checkbox"]{
 			width: auto;
 			display: inline-block;
 			margin: 0;
 		}
 	}
-	.bbf-field-radio, .bbf-field-checkboxes{
-		.bbf-editor{
+	.form-field-radio, .form-field-checkboxes{
+		.form-editor{
 			label{
 				font-weight: 400;
 			}
 			
 		}
 
-		input{
+		input[type="radio"]{
 			margin: 0 5px 0 1px;
 		}
 	}
-	.bbf-field-select{
+	.form-field-select{
 		label{
 			@include label-style;
 		}
-		.bbf-editor{ // the input field
-			@include bbf-editor-style;
-			// width: $label-width*2;
+		select{ // the input field
+			@include form-field-editor-style;
+			@include breakpoint($bkpt-768){
+				display:inline-block;
+			}
+			position:relative;
+			width:100%;
+			border:1px solid $form-color-border;
+			background-color:$form-color-background;
+		    border-radius: 0.125em;
+			height:2.5rem;
+			padding:0.25em 0.1em 0.25em 0.5em;
+			background-clip:padding-box;
+			overflow:hidden;
+			z-index:1;
+			vertical-align: middle;
+			&:before{
+				position:absolute;
+				right:7px;
+				line-height:1.5em;
+				content:"\e601";
+				font-size:1.5em;
+				color:#d1d1d1;
+				background-color:$form-color-background;
+				z-index:1;
+				@include breakpoint($bkpt-768){
+					line-height:2em;
+				}
+			}
+			&:hover{
+				border:1px solid $link-hover;
+			}
+			&:hover:before{
+				color:$link-hover;
+			}
+			select{
+				position:relative;
+				height:2.5rem;
+				width:110%;
+				margin:0px;
+				padding-left:12px;
+				padding-right:48px;
+				border:medium none $form-color-border;
+				font-family:sans-serif;
+				letter-spacing:normal;
+				font-size:14px;
+				font-size:0.875rem;
+				text-transform:none;
+				word-spacing:normal;
+				word-wrap:normal;
+				outline:none;
+				-webkit-user-select:text;
+				-webkit-font-smoothing:antialiased;
+				-webkit-appearance:none;
+				-moz-appearance:none;
+				appearance:none;
+				background-color:transparent;
+				z-index:2;
+			}
+			select::-ms-expand{
+				display:none;
+			}
+		}
+	}
+	.form-field-date{
+		label{
+			@include label-style;
+		}
+		.form-editor div div{ // the input field
+			@include breakpoint($bkpt-768){
+				display:inline-block;
+			}
+			position:relative;
+			// width:auto;
+			font-family:"formfonts";
+			border:1px solid $form-color-border;
+			background-color:$form-color-background;
+		    border-radius: 0.125em;
+			// height:2.5em;
+			// padding:0.25em 0.1em 0.25em 0.5em;
+			background-clip:padding-box;
+			overflow:hidden;
+			z-index:1;
+			vertical-align: middle;
+			&:before{
+				position:absolute;
+				right:7px;
+				line-height:1.5em;
+				content:"\e601";
+				font-size:1.5em;
+				// line-height:37px;
+				// line-height:2.3125rem;
+				color:#d1d1d1;
+				background-color:$form-color-background;
+				z-index:1;
+				@include breakpoint($bkpt-768){
+					line-height:2em;
+				}
+			}
+			&:hover{
+				border:1px solid $link-hover;
+			}
+			&:hover:before{
+				color:$link-hover;
+			}
+			select{
+				position:relative;
+				height:2.5rem;
+				width:110%;
+				margin:0px;
+				padding-left:12px;
+				padding-right:48px;
+				border:medium none $form-color-border;
+				font-family:sans-serif;
+				letter-spacing:normal;
+				font-size:14px;
+				font-size:0.875rem;
+				text-transform:none;
+				word-spacing:normal;
+				word-wrap:normal;
+				outline:none;
+				-webkit-user-select:text;
+				-webkit-font-smoothing:antialiased;
+				-webkit-appearance:none;
+				-moz-appearance:none;
+				appearance:none;
+				background-color:transparent;
+				z-index:2;
+			}
+			select::-ms-expand{
+				display:none;
+			}
+		}
+	}
+	.form-field-remember{
+		margin-top: -1em;
+		label{
+			font-size: 0.8em;
+			display: inline-block;
+			margin: 0;
+		}
+	}
 
-			@include breakpoint($bkpt-768){
-				display:inline-block;
-			}
-			position:relative;
-			// width:auto;
-			font-family:"formfonts";
-			border:1px solid $form-color-border;
-			background-color:$form-color-background;
-		    border-radius: 0.125em;
-			// height:2.5em;
-			// padding:0.25em 0.1em 0.25em 0.5em;
-			background-clip:padding-box;
-			overflow:hidden;
-			z-index:1;
-			vertical-align: middle;
-			&:before{
-				position:absolute;
-				right:7px;
-				line-height:1.5em;
-				content:"\e601";
-				font-size:1.5em;
-				// line-height:37px;
-				// line-height:2.3125rem;
-				color:#d1d1d1;
-				background-color:$form-color-background;
-				z-index:1;
-				@include breakpoint($bkpt-768){
-					line-height:2em;
-				}
-			}
-			&:hover{
-				border:1px solid $link-hover;
-			}
-			&:hover:before{
-				color:$link-hover;
-			}
-			select{
-				position:relative;
-				height:2.5em;
-				width:110%;
-				margin:0px;
-				padding-left:12px;
-				padding-right:48px;
-				border:medium none $form-color-border;
-				font-family:sans-serif;
-				letter-spacing:normal;
-				font-size:14px;
-				font-size:0.875rem;
-				text-transform:none;
-				word-spacing:normal;
-				word-wrap:normal;
-				outline:none;
-				-webkit-user-select:text;
-				-webkit-font-smoothing:antialiased;
-				-webkit-appearance:none;
-				-moz-appearance:none;
-				appearance:none;
-				background-color:transparent;
-				z-index:2;
-			}
-			select::-ms-expand{
-				display:none;
-			}
-		}
-	}
-	.bbf-field-date{
-		label{
-			@include label-style;
-		}
-		.bbf-editor div div{ // the input field
-			@include breakpoint($bkpt-768){
-				display:inline-block;
-			}
-			position:relative;
-			// width:auto;
-			font-family:"formfonts";
-			border:1px solid $form-color-border;
-			background-color:$form-color-background;
-		    border-radius: 0.125em;
-			// height:2.5em;
-			// padding:0.25em 0.1em 0.25em 0.5em;
-			background-clip:padding-box;
-			overflow:hidden;
-			z-index:1;
-			vertical-align: middle;
-			&:before{
-				position:absolute;
-				right:7px;
-				line-height:1.5em;
-				content:"\e601";
-				font-size:1.5em;
-				// line-height:37px;
-				// line-height:2.3125rem;
-				color:#d1d1d1;
-				background-color:$form-color-background;
-				z-index:1;
-				@include breakpoint($bkpt-768){
-					line-height:2em;
-				}
-			}
-			&:hover{
-				border:1px solid $link-hover;
-			}
-			&:hover:before{
-				color:$link-hover;
-			}
-			select{
-				position:relative;
-				height:2.5em;
-				width:110%;
-				margin:0px;
-				padding-left:12px;
-				padding-right:48px;
-				border:medium none $form-color-border;
-				font-family:sans-serif;
-				letter-spacing:normal;
-				font-size:14px;
-				font-size:0.875rem;
-				text-transform:none;
-				word-spacing:normal;
-				word-wrap:normal;
-				outline:none;
-				-webkit-user-select:text;
-				-webkit-font-smoothing:antialiased;
-				-webkit-appearance:none;
-				-moz-appearance:none;
-				appearance:none;
-				background-color:transparent;
-				z-index:2;
-			}
-			select::-ms-expand{
-				display:none;
-			}
-		}
-	}
 }
