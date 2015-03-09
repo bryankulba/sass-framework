@@ -6,12 +6,14 @@ Utility Classes
 
 // Visibility Classes
 .show {
-  display: block !important;
+	display: block !important;
 }
+
 .hidden {
-  display: none !important;
-  visibility: hidden !important;
+	display: none !important;
+	visibility: hidden !important;
 }
+
 .invisible {
-  visibility: hidden;
+	visibility: hidden;
 }

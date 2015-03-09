@@ -7,32 +7,31 @@
  ******************/
 
 $susy: (
-  flow: ltr,
-  math: fluid,
-  output: float,
-  gutter-position: after,
-  container: auto,
-  container-position: center,
-  columns: 4,
-  gutters: .25,
-  column-width: false,
-  global-box-sizing: content-box,
-  last-flow: to,
-  debug: (
-    image: hide,
-    color: rgba(#66f, .25),
-    output: background,
-    toggle: top right,
-  ),
-  use-custom: (
-    background-image: true,
-    background-options: false,
-    box-sizing: true,
-    clearfix: false,
-    rem: true,
-  )
+	flow: ltr,
+	math: fluid,
+	output: float,
+	gutter-position: after,
+	container: auto,
+	container-position: center,
+	columns: 4,
+	gutters: .25,
+	column-width: false,
+	global-box-sizing: content-box,
+	last-flow: to,
+	debug: (
+		image: hide,
+		color: rgba(#66f, .25),
+		output: background,
+		toggle: top right,
+	),
+	use-custom: (
+		background-image: true,
+		background-options: false,
+		box-sizing: false,
+		clearfix: false,
+		rem: true,
+	)
 );
-
 
 @include border-box-sizing;
 
@@ -40,7 +39,7 @@ $susy: (
 
 .wrap, #content{
 	padding: 0 $mobile-padding;
-
+	
 	@include breakpoint($bkpt-1024){
 		// @include with-grid-settings($break,$column-width,$gutter-width,$mobile-padding) {
 		  @include container($susy); 
@@ -49,16 +48,12 @@ $susy: (
 	}
 }
 
-
 // You shouldn't have to edit anything below here
-
 @include breakpoint($bkpt-1024){
 	.one{
-
 		@include span(1);
 	}
 	.two{
-
 		@include span(2);
 	}
 	.three{
@@ -95,5 +90,4 @@ $susy: (
 	.omega{
 		 @include omega;
 	}
-
 }

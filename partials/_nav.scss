@@ -24,10 +24,6 @@ header{
 			height:0;
 			max-height: 1px;
 			overflow: hidden;
-			-webkit-transition: max-height 1s;
-			-moz-transition: max-height 1s;
-			-ms-transition: max-height 1s;
-			-o-transition: max-height 1s;
 			transition: max-height 1s;
 			li{
 				list-style: none;
@@ -58,10 +54,6 @@ header{
 			}
 			&.activated{
 				height: auto;
-				-webkit-transition: max-height 1s;
-				-moz-transition: max-height 1s;
-				-ms-transition: max-height 1s;
-				-o-transition: max-height 1s;
 				transition: max-height 1s;
 				max-height: 800px;
 				// min-height: 800px;
@@ -69,7 +61,7 @@ header{
 		}
 		@include breakpoint($bkpt-1024){
 			display: block;
-			ul{			
+			ul{
 				background: transparent;
 				position: relative;
 				top: auto;

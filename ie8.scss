@@ -11,8 +11,6 @@ Stylesheet: IE8 fallback Stylesheet
 @import "breakpoint";
 @import "susy";
 
-
-
 // import normalize
 @import "vendors/normalize";
 
@@ -33,8 +31,6 @@ $breakpoint-no-query-fallbacks: true;
 // define grid and dimensions
 @import "framework/grids";
 
-
-
 // styles in base.scss
 @import "framework/base";
 
@@ -45,12 +41,8 @@ $breakpoint-no-query-fallbacks: true;
 // styles in partials folder (assembles files with folder)
 @import "partials/partials";
 
-
-
 // override any of the vendor styles
 @import "vendors/overrides";
-
-
 
 /*
 PRINT STYLESHEET

@@ -10,13 +10,10 @@ and is called at the beginning, after that we call the rest
 of the styles inside media queries.
 ******************************************************************/
 
-
 // Bring in the fancy/general purpose tools
 @import "compass";
 @import "breakpoint";
 @import "susy";
-
- 
 
 // import normalize
 @import "vendors/normalize";
@@ -35,11 +32,8 @@ $breakpoint-no-queries: false;
 $breakpoint-no-query-wrappers: false;
 @import "framework/breakpoint";
 
-
 // define grid and dimensions
 @import "framework/grids";
-
-
 
 // styles in base.scss
 @import "framework/base";
@@ -61,8 +55,6 @@ $breakpoint-no-query-wrappers: false;
 
 // override any of the vendor styles
 @import "vendors/overrides";
-
-
 
 /*
 PRINT STYLESHEET
