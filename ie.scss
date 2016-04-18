@@ -9,6 +9,7 @@ Stylesheet: IE8 fallback Stylesheet
 // Bring in the fancy/general purpose tools
 @import "compass";
 @import "breakpoint";
+@import "bourbon";
 @import "susy";
 
 // import normalize

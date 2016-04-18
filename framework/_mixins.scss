@@ -1,3 +1,5 @@
+
+
 /******************
 
 Mixins
@@ -119,4 +121,42 @@ Mixins
 		display: table;
 		clear: both;
 	}
+}
+
+@import "compass/css3/background-size";
+
+@mixin bgnd-retina($file, $type) {
+  $image: ($file + '.' + $type);
+  background-image: image-url($image);
+ 
+  @media only screen and (-webkit-min-device-pixel-ratio: 2)
+  {
+    $image2x: ($file + '@2x.' + $type);
+    background-image: image-url($image2x);
+    @include background-size(image-width($image) auto);
+  }
+}
+
+@mixin background-image-retina($file, $type) {
+  $image: ($file + '.' + $type);
+  background-image: image-url($image);
+  height: image-height($image);
+  width: image-width($image);
+
+  @media only screen and (-webkit-min-device-pixel-ratio: 2)
+  {
+    $image2x: ($file + '@2x.' + $type);
+    background-image: image-url($image2x);
+    @include background-size(image-width($image) auto);
+  }
+}
+
+@mixin image-replacement($file, $type) {
+  @include background-image-retina($file, $type);
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  display: block;
 }
