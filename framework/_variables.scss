@@ -13,8 +13,11 @@ COLORS
 
 
 // Website Colors
-$color-foreground: #000000;
-$color-background: #ffffff;
+$color-white: #000000;
+$color-black: #ffffff;
+
+$color-foreground: $color-white;
+$color-background: $color-black;
 
 
 $color-highlight-foregound: $color-background;
@@ -29,36 +32,22 @@ $link-hover:        darken($link-color, 9%);
 Typography
 
 */
-$font-size-mobile: 18px;
-$font-size: 21px;
-$font-size-large: 24px;
-$line-height: 1.4em;
-$font-default: "Helvetica Neue", Helvetica, Arial, sans-serif;
-$font-default-second:  "Helvetica Neue", Helvetica, Arial, sans-serif;
+
 
 // $sans-serif:        "Helvetica Neue", Helvetica, Arial, sans-serif;
 // $serif:             "Georgia", Cambria, Times New Roman, Times, serif;
 
+// for fontface:
+// @include font-builder("font name you call", "filename-no-extension", 400);
 
-/*  To embed your own fonts, use this syntax
-    and place your fonts inside the
-    library/fonts folder. For more information
-    on embedding fonts, go to:
-    http://www.fontsquirrel.com/
-    Be sure to remove the comment brackets.
-*/
+$font-size-mobile: 18px;
+$font-size: 21px;
+$font-size-large: 24px;
+$line-height: 1.4;
+$font-default: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-default-second:  "Helvetica Neue", Helvetica, Arial, sans-serif;
 
-/*  @font-face {
-        font-family: 'Font Name';
-        src: url('library/fonts/font-name.eot');
-        src: url('library/fonts/font-name.eot?#iefix') format('embedded-opentype'),
-             url('library/fonts/font-name.woff') format('woff'),
-             url('library/fonts/font-name.ttf') format('truetype'),
-             url('library/fonts/font-name.svg#font-name') format('svg');
-        font-weight: normal;
-        font-style: normal;
-    }
-*/
+
 
 // Alert Colors
 
@@ -80,17 +69,13 @@ $color-btn-border: $color-border; //by default, this is the same as the general 
 $label-width: 100%; // this will determine whether labels and fields are side by side
 $form-font: $font-default;
 
-$form-color: $color-foreground;
-$form-color-background: $color-background;
-$form-color-border: lighten($color-foreground, 50);
-$form-color-btn: $color-btn;
-$form-color-btn-text: $color-background;
 
 $form-color: $color-foreground;
 $form-label-color: $form-color;
-$form-placeholder-color: #666;
+$form-placeholder-color: rgba($color-foreground, 0.8);
 $form-color-background: $color-background;
 $form-color-border: $color-foreground;
+$form-color-border-focus: darken($color-foreground, 5);
 $form-color-btn: $color-btn;
 $form-color-btn-text: $color-btn-text;
 $form-error-color: $alert-red;
@@ -122,6 +107,10 @@ $pagination-current-border: $color-foreground;
 Inital Setup Variables
  */
 
-$mobile-padding: 1em; //the initial padding for the website in mobile
+$mobile-padding: 1rem; //the initial padding for the website in mobile
+$internal-padding: $mobile-padding*2;
 
+
+// ease variable
+$ease: cubic-bezier(.03,.66,.11,1.01);
 

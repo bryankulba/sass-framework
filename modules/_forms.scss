@@ -8,7 +8,7 @@ Forms
 	@if $label-width == 100% {
 		display: block;
 	} @else {
-		@include breakpoint($bkpt-768){
+		@include breakpoint($bkpt-1024){
 			width: $label-width;
 			float: left;
 			text-align: right;
@@ -24,7 +24,7 @@ Forms
 	@if $label-width == 100% {
 		display: block;
 	} @else {
-		@include breakpoint($bkpt-768){
+		@include breakpoint($bkpt-1024){
 			width: 100% - $label-width;
 			float: left;
 		}
@@ -58,8 +58,8 @@ Forms
 	color: $form-placeholder-color;
 }
 form{
-	div{ // this will style all input containers
-		margin-bottom: 1em;
+	> div{ // this will style all input containers
+		
 		overflow: hidden;
 		clear: both;
 	}
@@ -84,35 +84,40 @@ form{
 		box-sizing: border-box;
 		margin-bottom: 0.25em;
 	}
-	input[type="text"], input[type="number"], input[type="email"], input[type="password"], textarea{
+	input[type="text"], input[type="number"],  input[type="tel"], input[type="email"], input[type="password"], textarea, select{
 		font-family: $form-font;
 		background: $form-color-background;
 		color: $form-color;
-		width:$label-width;
-		border:1px solid $form-color-border;
+		width: 100%;
+		border: 1px solid $form-color-border;
 		-webkit-appearance: none;
 	    border-radius: 0.25em;
 		height:2.5rem;
 		padding:0.25em 0.1em 0.25em 0.5em;
 		box-sizing: border-box;
+		transition: border-color 1s $ease, background-color 1s $ease; 
 		&:focus{
+			border-color: $form-color-border-focus;
 			outline:none;
-			background:darken($form-color-background, 5);
+			background: rgba($form-color-background, 0.8);
 		}
 	}
 	input[type="submit"]{
 		@extend .btn;
+		box-shadow: none;
+		height:2.5rem;
+		border:none;
+		text-transform: uppercase;
+		transition: background-color 0.5s;
+		line-height: 1;
 		@if $label-width == 100% {
 			display: inline-block;
 		} @else {
 			width:100% - $label-width;
-			height: 2.5em;
-			margin-right: 1em;
-			padding: 0.5em 2em;
+			height: 2.5rem;
+			padding: 0.5rem 2em;
+			float: right;
 		}
-		border:none;
-		text-transform: uppercase;
-		transition: background-color 0.5s;
 	}
 	.form-cancel{
 		font-size: 0.8em;
@@ -122,7 +127,7 @@ form{
 
 	// fancy schmancy
 	.half-field{
-		@include breakpoint($bkpt-768){
+		@include breakpoint($bkpt-1024){
 			width: 50%;
 			float: left;
 			clear: none;
@@ -168,17 +173,34 @@ form{
 			text-align: right;
 		}
 	}
-	.form-error{
+	.form-error, .validation_message, .validation_error{
 		display: none;
 		color:$form-error-color;
 		@extend .form-note;
+		@if $label-width == 100% {
+			// display: block;
+		} @else {
+			@include breakpoint($bkpt-1024){
+				width: 100% - $label-width;
+				float: right;
+			}
+		}
+
+	}
+	 .validation_error{
+				display: block;
 	}
 
-	.form-field-error{
-		input{
-			box-shadow: inset 0 0 10px rgba($form-error-color, 0.5);
+	.form-field-error, .gfield_error{
+		// input{
+		// 	box-shadow: inset 0 0 10px rgba($form-error-color, 0.5);
+		// }
+		input[type="text"], input[type="number"],  input[type="tel"], input[type="email"], input[type="password"], textarea{
+			outline:none;
+			background: rgba($form-color-background, 0.8);
+			border: 1px solid $form-color-border;
 		}
-		.form-error{
+		.form-error, .validation_message{
 			display: block;
 		}
 	}
@@ -190,11 +212,15 @@ form{
 		width:100%;
 	}
 
-	.form-field-text, .form-field-number{
+	.form-field-text, .form-field-number, .gfield{
+		overflow: hidden;
+		margin-bottom: 1em;
 		label{
 			@include label-style;
+			font-weight: 600;
 		}
-		input[type="text"], input[type="email"], textarea{ // the input field
+		// input[type="text"], input[type="number"],  input[type="tel"], input[type="email"], input[type="password"], textarea{ // the input field
+		.ginput_container{
 			@include form-field-editor-style;
 		}
 		input[type="text"], input[type="email"], textarea{
@@ -209,7 +235,7 @@ form{
 		}
 	}
 	.form-field-radio, .form-field-checkboxes, .form-field-checkbox{
-		@include breakpoint($bkpt-768){
+		@include breakpoint($bkpt-1024){
 			margin-left: $label-width;
 		}
 	}
@@ -247,7 +273,7 @@ form{
 		}
 		select{ // the input field
 			@include form-field-editor-style;
-			@include breakpoint($bkpt-768){
+			@include breakpoint($bkpt-1024){
 				display:inline-block;
 			}
 			position:relative;
@@ -270,7 +296,7 @@ form{
 				color:#d1d1d1;
 				background-color:$form-color-background;
 				z-index:1;
-				@include breakpoint($bkpt-768){
+				@include breakpoint($bkpt-1024){
 					line-height:2em;
 				}
 			}
@@ -314,7 +340,7 @@ form{
 			@include label-style;
 		}
 		.form-editor div div{ // the input field
-			@include breakpoint($bkpt-768){
+			@include breakpoint($bkpt-1024){
 				display:inline-block;
 			}
 			position:relative;
@@ -340,7 +366,7 @@ form{
 				color:#d1d1d1;
 				background-color:$form-color-background;
 				z-index:1;
-				@include breakpoint($bkpt-768){
+				@include breakpoint($bkpt-1024){
 					line-height:2em;
 				}
 			}
@@ -387,5 +413,27 @@ form{
 			margin: 0;
 		}
 	}
+	select, select:focus{
+		background-image: url(../images/select_dropdown.png);
+		background-position: 100% 50%;
+		background-repeat: no-repeat;
+		background-size: contain;
+		width:100%;
+		display:block;
+		// border:none;
+		-webkit-appearance: none;
+	    // border-radius: 0;
+		// height:2.5rem;
+		padding:0.25em 0.1em 0.25em 0.5em;
+
+		box-sizing: border-box;
+		&:focus{
+			outline:none;
+		}
+		// margin-bottom: 2em;
+	}
 
 }
+
+
+

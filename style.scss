@@ -1,5 +1,4 @@
 /******************************************************************
-Site Name: 
 Author: Kobot
 
 Stylesheet: Main Stylesheet
@@ -13,14 +12,20 @@ of the styles inside media queries.
 // Bring in the fancy/general purpose tools
 @import "compass";
 @import "breakpoint";
-@import "bourbon";
 @import "susy";
+@import "bourbon";
 
 // import normalize
 @import "vendors/normalize";
 
+// define Breakpoints
+$breakpoint-no-queries: false;
+$breakpoint-no-query-wrappers: false;
+@import "framework/breakpoint";
+
 // import variables
 @import "framework/variables";
+@import "modules/buttons";
 
 // import mixins
 @import "framework/mixins";
@@ -28,10 +33,7 @@ of the styles inside media queries.
 // import site mixins
 @import "framework/site-mixins";
 
-// define Breakpoints
-$breakpoint-no-queries: false;
-$breakpoint-no-query-wrappers: false;
-@import "framework/breakpoint";
+
 
 // define grid and dimensions
 @import "framework/grids";
@@ -50,7 +52,6 @@ $breakpoint-no-query-wrappers: false;
 @import "modules/utility";
 
 // add Modules here
-@import "modules/buttons";
 @import "modules/forms";
 @import "modules/wordpress";
 

@@ -1,5 +1,4 @@
 /******************************************************************
-Site Name: 
 Author: Kobot
 
 Stylesheet: IE8 fallback Stylesheet
@@ -9,14 +8,20 @@ Stylesheet: IE8 fallback Stylesheet
 // Bring in the fancy/general purpose tools
 @import "compass";
 @import "breakpoint";
-@import "bourbon";
 @import "susy";
+@import "bourbon";
 
 // import normalize
 @import "vendors/normalize";
 
 // import variables
 @import "framework/variables";
+@import "modules/buttons";
+
+// define Breakpoints
+$breakpoint-no-queries: false;
+$breakpoint-no-query-fallbacks: true;
+@import "framework/breakpoint";
 
 // import mixins
 @import "framework/mixins";
@@ -24,10 +29,6 @@ Stylesheet: IE8 fallback Stylesheet
 // import site mixins
 @import "framework/site-mixins";
 
-// define Breakpoints
-$breakpoint-no-queries: false;
-$breakpoint-no-query-fallbacks: true;
-@import "framework/breakpoint";
 
 // define grid and dimensions
 @import "framework/grids";

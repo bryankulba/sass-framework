@@ -6,6 +6,6 @@ Header
 
 header{
 	h1{
-		// @include replace-text-with-dimensions("logo.jpg"); // You'll probably wanna use this!!!
+		// @include image-replacement("logo", "png"); // 
 	}
 } // end header
